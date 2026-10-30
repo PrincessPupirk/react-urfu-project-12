@@ -3,7 +3,6 @@ import {
   Alert,
   Anchor,
   Button,
-  PasswordInput,
   TextInput,
   Title,
 } from '@mantine/core';
@@ -60,13 +59,16 @@ function LoginPage() {
         <TextInput
           label={t('login.usernameLabel')}
           placeholder={t('login.usernamePlaceholder')}
+          withAsterisk={false}
           required
           mt="md"
           {...form.getInputProps('username')}
         />
-        <PasswordInput
+        <TextInput
+          type="password"
           label={t('login.passwordLabel')}
           placeholder={t('login.passwordPlaceholder')}
+          withAsterisk={false}
           required
           mt="md"
           {...form.getInputProps('password')}

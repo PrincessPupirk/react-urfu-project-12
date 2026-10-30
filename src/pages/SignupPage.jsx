@@ -3,7 +3,6 @@ import {
   Alert,
   Anchor,
   Button,
-  PasswordInput,
   TextInput,
   Title,
 } from '@mantine/core';
@@ -92,22 +91,27 @@ function SignupPage() {
         <TextInput
           label={t('signup.usernameLabel')}
           placeholder={t('signup.usernamePlaceholder')}
+          withAsterisk={false}
           required
           mt="md"
           disabled={isSubmitting}
           {...form.getInputProps('username')}
         />
-        <PasswordInput
+        <TextInput
+          type="password"
           label={t('signup.passwordLabel')}
           placeholder={t('signup.passwordPlaceholder')}
+          withAsterisk={false}
           required
           mt="md"
           disabled={isSubmitting}
           {...form.getInputProps('password')}
         />
-        <PasswordInput
+        <TextInput
+          type="password"
           label={t('signup.confirmPasswordLabel')}
           placeholder={t('signup.confirmPasswordPlaceholder')}
+          withAsterisk={false}
           required
           mt="md"
           disabled={isSubmitting}
