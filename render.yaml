@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hexlet-chat
+    runtime: node
+    plan: free
+    buildCommand: make build
+    startCommand: make start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: VITE_SENTRY_DSN
+        sync: false

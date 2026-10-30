@@ -1,0 +1,88 @@
+{
+  "appName": "Hexlet Chat",
+  "logout": "Выйти",
+  "notFound": {
+    "title": "404",
+    "message": "Страница не найдена"
+  },
+  "login": {
+    "title": "Вход",
+    "usernameLabel": "Ваш ник",
+    "usernamePlaceholder": "Ваш ник",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Пароль",
+    "submit": "Войти",
+    "error": "Неверные имя пользователя или пароль",
+    "signupLink": "Нет аккаунта? Зарегистрироваться"
+  },
+  "signup": {
+    "title": "Регистрация",
+    "usernameLabel": "Имя пользователя",
+    "usernamePlaceholder": "Имя пользователя",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Пароль",
+    "confirmPasswordLabel": "Подтвердите пароль",
+    "confirmPasswordPlaceholder": "Подтвердите пароль",
+    "submit": "Зарегистрироваться",
+    "userExists": "Такое имя пользователя уже занято",
+    "error": "Не удалось зарегистрироваться. Попробуйте позже.",
+    "loginLink": "Уже есть аккаунт? Войти"
+  },
+  "validation": {
+    "required": "Обязательное поле",
+    "usernameLength": "От 3 до 20 символов",
+    "passwordMin": "Не менее 6 символов",
+    "passwordMatch": "Пароли должны совпадать",
+    "channelLength": "От 3 до 20 символов",
+    "channelUnique": "Должно быть уникальным",
+    "messageRequired": "Введите сообщение"
+  },
+  "chat": {
+    "loadError": "Не удалось загрузить данные чата",
+    "networkReconnect": "Ошибка соединения",
+    "noMessages": "Сообщений пока нет",
+    "channelPrefix": "# {{name}}"
+  },
+  "channels": {
+    "title": "Каналы",
+    "add": "+",
+    "manage": "Управление каналом",
+    "rename": "Переименовать",
+    "remove": "Удалить",
+    "nameLabel": "Имя канала",
+    "namePlaceholder": "Имя канала"
+  },
+  "modals": {
+    "addChannel": {
+      "title": "Добавить канал",
+      "submit": "Создать"
+    },
+    "renameChannel": {
+      "title": "Переименовать канал",
+      "submit": "Сохранить"
+    },
+    "removeChannel": {
+      "title": "Удалить канал",
+      "confirm": "Вы уверены, что хотите удалить канал # {{name}}?",
+      "cancel": "Отменить",
+      "submit": "Удалить"
+    }
+  },
+  "messages": {
+    "newPlaceholder": "Новое сообщение",
+    "newAriaLabel": "Новое сообщение",
+    "submit": "Отправить",
+    "submitError": "Ошибка соединения",
+    "socketWarning": "Ошибка соединения"
+  },
+  "notifications": {
+    "loadError": "Не удалось загрузить данные чата",
+    "networkError": "Ошибка соединения",
+    "channelCreated": "Канал создан",
+    "channelRenamed": "Канал переименован",
+    "channelRemoved": "Канал удалён"
+  },
+  "errors": {
+    "boundary": "Произошла ошибка. Мы уже работаем над её исправлением."
+  }
+}

@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+
+.auth-page,
+.not-found-page {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: calc(100vh - 56px);
+}
+
+.connection-alert {
+  grid-column: 1 / -1;
+  border-radius: 0;
+}
+
+.app-header {
+  border-bottom: 1px solid var(--mantine-color-gray-3);
+}
+
+.channels-panel {
+  border-right: 1px solid var(--mantine-color-gray-3);
+  padding: 1rem;
+  min-width: 0;
+}
+
+.channel-link .mantine-NavLink-label {
+  overflow-wrap: anywhere;
+}
+
+.channels-scroll {
+  height: calc(100vh - 4rem);
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.messages-scroll {
+  flex: 1;
+  height: calc(100vh - 10rem);
+}
+
+.message-form {
+  border-top: 1px solid var(--mantine-color-gray-3);
+  padding: 1rem;
+}
+
+.channel-title {
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--mantine-color-gray-3);
+}
+
+.message-item {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.message-username,
+.message-body {
+  overflow-wrap: anywhere;
+}
+
+.error-fallback {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.chat-loader {
+  min-height: 100vh;
+}
