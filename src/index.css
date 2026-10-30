@@ -31,8 +31,10 @@ body {
   min-width: 0;
 }
 
-.channel-link .mantine-NavLink-label {
+.channel-link {
   overflow-wrap: anywhere;
+  white-space: normal;
+  height: auto;
 }
 
 .channels-scroll {

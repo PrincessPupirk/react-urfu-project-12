@@ -2,7 +2,6 @@ import {
   Button,
   Group,
   Menu,
-  NavLink,
   ScrollArea,
   Stack,
   Title,
@@ -34,43 +33,53 @@ function ChannelList() {
       </Group>
       <ScrollArea className="channels-scroll">
         <Stack gap="xs">
-          {channels.map((channel) => (
-            <NavLink
-              key={channel.id}
-              className="channel-link"
-              label={t('chat.channelPrefix', { name: filterProfanity(channel.name) })}
-              active={String(channel.id) === String(currentChannelId)}
-              onClick={() => setCurrentChannelId(channel.id)}
-              variant="filled"
-              rightSection={channel.removable ? (
-                <Menu position="bottom-end" withinPortal>
-                  <Menu.Target>
-                    <Button
-                      variant="subtle"
-                      size="compact-xs"
-                      aria-label={t('channels.manage')}
-                      onClick={(event) => event.stopPropagation()}
-                    >
-                      <IconDots size={16} />
-                    </Button>
-                  </Menu.Target>
-                  <Menu.Dropdown>
-                    <Menu.Item
-                      onClick={() => openModal('renameChannel', channel.id)}
-                    >
-                      {t('channels.rename')}
-                    </Menu.Item>
-                    <Menu.Item
-                      color="red"
-                      onClick={() => openModal('removeChannel', channel.id)}
-                    >
-                      {t('channels.remove')}
-                    </Menu.Item>
-                  </Menu.Dropdown>
-                </Menu>
-              ) : null}
-            />
-          ))}
+          {channels.map((channel) => {
+            const channelLabel = t('chat.channelPrefix', {
+              name: filterProfanity(channel.name),
+            });
+            const isActive = String(channel.id) === String(currentChannelId);
+
+            return (
+              <Group key={channel.id} gap={4} wrap="nowrap" align="center">
+                <Button
+                  className="channel-link"
+                  variant={isActive ? 'filled' : 'subtle'}
+                  fullWidth
+                  justify="flex-start"
+                  style={{ flex: 1, minWidth: 0 }}
+                  onClick={() => setCurrentChannelId(channel.id)}
+                >
+                  {channelLabel}
+                </Button>
+                {channel.removable ? (
+                  <Menu position="bottom-end" withinPortal>
+                    <Menu.Target>
+                      <Button
+                        variant="subtle"
+                        size="compact-xs"
+                        aria-label={t('channels.manage')}
+                      >
+                        <IconDots size={16} />
+                      </Button>
+                    </Menu.Target>
+                    <Menu.Dropdown>
+                      <Menu.Item
+                        onClick={() => openModal('renameChannel', channel.id)}
+                      >
+                        {t('channels.rename')}
+                      </Menu.Item>
+                      <Menu.Item
+                        color="red"
+                        onClick={() => openModal('removeChannel', channel.id)}
+                      >
+                        {t('channels.remove')}
+                      </Menu.Item>
+                    </Menu.Dropdown>
+                  </Menu>
+                ) : null}
+              </Group>
+            );
+          })}
         </Stack>
       </ScrollArea>
     </aside>
