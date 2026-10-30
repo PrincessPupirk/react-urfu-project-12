@@ -34,9 +34,8 @@ function ChannelList() {
       <ScrollArea className="channels-scroll">
         <Stack gap="xs">
           {channels.map((channel) => {
-            const channelLabel = t('chat.channelPrefix', {
-              name: filterProfanity(channel.name),
-            });
+            const displayName = filterProfanity(channel.name);
+            const channelLabel = t('chat.channelPrefix', { name: displayName });
             const isActive = String(channel.id) === String(currentChannelId);
 
             return (
@@ -47,9 +46,10 @@ function ChannelList() {
                   fullWidth
                   justify="flex-start"
                   style={{ flex: 1, minWidth: 0 }}
+                  aria-label={channelLabel}
                   onClick={() => setCurrentChannelId(channel.id)}
                 >
-                  {channelLabel}
+                  {displayName}
                 </Button>
                 {channel.removable ? (
                   <Menu position="bottom-end" withinPortal>
